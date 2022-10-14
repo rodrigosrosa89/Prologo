@@ -46,13 +46,13 @@ function SalesCard() {
                             <th className="show992">Visitas</th>
                             <th className="show992">Vendas</th>
                             <th>Total</th>
-                            <th>Notificar</th>
+                            <th>Visualizar</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td className="show992">#341</td>
-                            <td className="show576">08/07/2022</td>
+                            <td className="show576">11/07/2022</td>
                             <td>Ciro</td>
                             <td className="show992">12</td>
                             <td className="show992">11</td>
@@ -65,7 +65,7 @@ function SalesCard() {
                         </tr>
                         <tr>
                             <td className="show992">#342</td>
-                            <td className="show576">08/07/2022</td>
+                            <td className="show576">14/07/2022</td>
                             <td>Pedro</td>
                             <td className="show992">13</td>
                             <td className="show992">11</td>
