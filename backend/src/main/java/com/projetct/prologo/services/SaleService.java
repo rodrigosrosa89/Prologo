@@ -30,10 +30,7 @@ public class SaleService {
 
     public Sale findSaleById(Long id) {
         Optional<Sale> optionalSale = repository.findById(id);
-        if (optionalSale.isPresent()) {
-            return optionalSale.get();
-        }
-        return null;
+        return optionalSale.orElse(null);
     }
 
     public void save(Sale sale) {
