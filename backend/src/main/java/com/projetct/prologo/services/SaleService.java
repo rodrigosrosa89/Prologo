@@ -36,8 +36,13 @@ public class SaleService {
         return null;
     }
 
-    public void createSale(Sale sale) {
+    public void save(Sale sale) {
         repository.save(sale);
     }
+
+    public void delete(Sale sale) {
+        repository.delete(sale);
+    }
+
 
 }
