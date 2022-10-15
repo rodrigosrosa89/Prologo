@@ -115,3 +115,15 @@ INSERT INTO tb_sales(seller_name,visited,deals,amount,date) VALUES ('Pedro',58,4
 INSERT INTO tb_sales(seller_name,visited,deals,amount,date) VALUES ('João Vitor',55,35,20474.0,'2021-07-05');
 INSERT INTO tb_sales(seller_name,visited,deals,amount,date) VALUES ('Rodrigo',84,34,5787.0,'2021-07-01');
 INSERT INTO tb_sales(seller_name,visited,deals,amount,date) VALUES ('Pedro',79,68,11976.0,'2021-06-27');
+
+INSERT INTO tb_categories(name) VALUES ('Quarto');
+INSERT INTO tb_categories(name) VALUES ('Cozinha');
+
+INSERT INTO tb_products(name, quantity, price, category_id) VALUES ('Roupa de cama', 10,18196.0, 1);
+INSERT INTO tb_products(name, quantity, price, category_id) VALUES ('Toalha de banho',10,18196.0, 1);
+INSERT INTO tb_products(name, quantity, price, category_id) VALUES ('Geladeira',10,18196.0, 2);
+INSERT INTO tb_products(name, quantity, price, category_id) VALUES ('Fogão 4 bocas',10,18196.0, 2);
+INSERT INTO tb_products(name, quantity, price, category_id) VALUES ('Cama', 10,18196.0, 1);
+INSERT INTO tb_products(name, quantity, price, category_id) VALUES ('Forno a gás', 10,18196.0, 2);
+INSERT INTO tb_products(name, quantity, price, category_id) VALUES ('Armário',10,18196.0, 1);
+
