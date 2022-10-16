@@ -1,33 +1,21 @@
-import './styles.css'
-import NotificationButton from '../../components/notification-button'
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
+import "react-datepicker/dist/react-datepicker.css";
+import { Category } from '../../models/category';
 import { BASE_URL } from '../../utils/request';
-import { Sale } from '../../models/sale';
+import './styles.css';
 
 
 function CategoriesCard() {
 
-    const min = new Date(new Date().setDate(new Date().getDate() - 365));;
-    const max = new Date();
-
-    const [minDate, setMinDate] = useState(min);
-    const [maxDate, setMaxDate] = useState(max);
-
-    const [sales, setSales] = useState<Sale[]>([])
+    const [categories, setCategories] = useState<Category[]>([])
 
     useEffect(() => {
-
-        const dMin = minDate.toISOString().slice(0, 10);
-        const dMax = maxDate.toISOString().slice(0, 10);
-
-        axios.get(`${BASE_URL}/sales?minDate=${dMin}&maxDate=${dMax}`)
+        axios.get(`${BASE_URL}/categories`)
         .then(response => {
-            setSales(response.data.content);
+            setCategories(response.data.content);
         })
-    }, [minDate, maxDate]);
+    }, []);
 
     
     return (
@@ -35,19 +23,8 @@ function CategoriesCard() {
             <h2 className="dsmeta-sales-title">Categorias</h2>
             <div>
                 <div className="dsmeta-form-control-container">
-                    <DatePicker
-                        selected={minDate}
-                        onChange={(date: Date) => setMinDate(date)}
+                    <input type="text"
                         className="dsmeta-form-control"
-                        dateFormat="dd/MM/yyyy"
-                    />
-                </div>
-                <div className="dsmeta-form-control-container">
-                    <DatePicker
-                        selected={maxDate}
-                        onChange={(date: Date) => setMaxDate(date)}
-                        className="dsmeta-form-control"
-                        dateFormat="dd/MM/yyyy"
                     />
                 </div>
             </div>
@@ -57,30 +34,16 @@ function CategoriesCard() {
                     <thead>
                         <tr>
                             <th className="show992">ID</th>
-                            <th className="show576">Data</th>
-                            <th>Vendedor</th>
-                            <th className="show992">Visitas</th>
-                            <th className="show992">Vendas</th>
-                            <th>Total</th>
-                            <th>Notificar</th>
+                            <th className="show576">Nome</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            sales.map(sale => {
+                            categories.map(category => {
                                 return (
-                        <tr key={sale.id}>
-                            <td className="show992">{sale.id}</td>
-                            <td className="show576">{new Date(sale.date).toLocaleDateString()}</td>
-                            <td>{sale.sellerName}</td>
-                            <td className="show992">{sale.visited}</td>
-                            <td className="show992">{sale.deals}</td>
-                            <td>{sale.amount.toFixed(2)}</td>
-                            <td>
-                                <div className="dsmeta-red-btn-container">
-                                    <NotificationButton saleId={sale.id}/>
-                                </div>
-                            </td>
+                        <tr key={category.id}>
+                            <td className="show992">{category.id}</td>
+                            <td className="show992">{category.name}</td>
                         </tr>
                                 )
                             })

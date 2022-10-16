@@ -3,7 +3,7 @@ import Home from "./pages/home"
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import SalesCard from "./pages/categories-card";
+import SalesCard from "./pages/sales-card";
 import ProductsCard from "./pages/products-card";
 import CategoriesCard from "./pages/categories-card";
 
@@ -18,7 +18,6 @@ function App() {
       <Router>
         <Navbar/>
         <Switch>
-          <Container>
           <Route exact path="/">
             <Home />
           </Route>
@@ -31,7 +30,6 @@ function App() {
           <Route exact path="/sales">
             <SalesCard />
           </Route>
-          </Container >
         </Switch>
         <Footer/>
       </Router>

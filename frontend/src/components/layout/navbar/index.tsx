@@ -1,21 +1,17 @@
 import './styles.css'
 import { Link } from 'react-router-dom'
-import logo from '../../../assets/img/logo.svg'
 import Container from '../container'
 
 
 function Navbar() {
     return (
-        <nav>
-            <Container>
-                <Link to="/">
-                    <img src={logo} alt="Logo" />
-                </Link>
-                <Link to="/">Home</Link>
-                <Link to="/product">Produtos</Link>
-                <Link to="/category">Categorias</Link>
-                <Link to="/sales">Vendas</Link>
-            </Container>
+        <nav className='navbar'>
+                <ul className='list'>
+                    <li className='item'><Link to="/">Home</Link></li>
+                    <li className='item'><Link to="/product">Produtos</Link></li>
+                    <li className='item'><Link to="/category">Categorias</Link></li>
+                    <li className='item'><Link to="/sales">Vendas</Link></li>
+                </ul>
         </nav>
     )
 }

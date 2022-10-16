@@ -1,8 +1,14 @@
+.footer { 
+  background-color: #222;
+  color: #fff;
+  padding: 3em;
+  text-align: center;
+}
+
 .social-list {
   display: flex;
   justify-content: center;
-  align-items: center;
-  list-style: none;
+  list-style-type: none;
 }
 
 .social-list li{
@@ -10,8 +16,11 @@
 
 }
 
-.social-list svg {
-  font-size: 2em;
+.social-list li:hover {
   color: #ffbb33;
-  cursor: pointer;
+}
+
+.social-list svg {
+  font-size: 1.5em;
+  color: #fff;
 }
